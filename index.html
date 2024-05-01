@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  *, html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  #trailer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  .container {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 25px;
+    font-size: 20px;
+    font-family: fantasy;
+  }
+  #btn {
+    border: none;
+    padding: 12px;
+    color: white;
+    background-color: black;
+    margin-top: 20px;
+    font-weight: 800;
+    width: 200px;
+    cursor: pointer;
+  }
+</style>
+<body>
+  <video autoplay muted loop id="trailer" >
+    <source src="game_trailer.mp4" type="video/mp4"/>
+  </video>
+  <div class="container">
+    <center>
+    <image src="roblox-logo.png" alt="" width="150" height="150"/>
+    <p>game tebaik saat ini coba mainkan dengan teman anda,juga game ini tidak membosankan untuk anak-anak.</p>
+    <button id="btn" onclick="triggerBtn()">PAUSE</button>
+   </center>
+  </div>
+  <script>
+    const trailer = document.getElementById("trailer")
+    const btn = document.getElementById("btn")
+    function triggerBtn() {
+      if(trailer.paused){
+        trailer.play()
+        btn.innerHTML = "PAUSE"
+      }else{
+        trailer.pause()
+        btn.innerHTML = "PLAY"
+      }
+    }
+  </script>
+</body>
+</html>
